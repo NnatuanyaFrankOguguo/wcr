@@ -59,7 +59,9 @@
     justify-content: center;
     align-items: center;
     position: relative;
-    padding-right: 15px
+    padding-right: 15px;
+   
+    
       
 }
 
@@ -137,6 +139,7 @@
         width: 100%;
         max-width: 1300px;
         padding: 0;
+        
 
     }
 
@@ -170,6 +173,10 @@
         font-size: 1.6rem;
         
 
+    }
+
+    .logo{
+        margin-left: 15px
     }
 
     /* #navbar_logo{
@@ -387,6 +394,8 @@
         padding: 12px 36px;
         margin: 2.5rem 0;
     }
+
+    
 }
 
 
