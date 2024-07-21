@@ -172,6 +172,11 @@ body{
         z-index: 99;
         height: 50vh;
         font-size: 1.6rem;
+        transform: translate(-0%, -0%);
+        background: rgba(255, 255, 255, 0.3); /* Semi-transparent background */
+        backdrop-filter: blur(10px); /* Apply blur effect */
+        border-radius: 10px; /* Optional: rounded corners */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         
 
     }
@@ -386,7 +391,7 @@ body{
     }
 }
 
-@media screen and (max-width: 480px){
+@media screen and (max-width: 442px){
 
     .title{
         text-align: center;
@@ -410,8 +415,8 @@ body{
     }
 
     .main-btn{
-        padding: 12px 36px;
-        margin: 2.5rem 0;
+        padding: 12px 10px;
+        margin: 2rem 10px;
     }
 
     
