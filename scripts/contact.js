@@ -1,10 +1,10 @@
-const menuBtn = document.querySelector('#menubtn');
+const menu = document.querySelector('#mobile_menu');
+const menuLink = document.querySelector('.navbar_menu');
 
-menuBtn.addEventListener('click', function(){
-  const openSidebar = document.querySelector('.sidebar');
-  openSidebar.style.display = 'flex'
-
-});
+menu.addEventListener('click', function() { 
+    menu.classList.toggle('is-active');
+    menuLink.classList.toggle('active');
+})
 
 
 const closeBtn = document.querySelector('#closebtn');

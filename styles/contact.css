@@ -1,46 +1,52 @@
-    
 
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap');
 
 *{
     margin: 0;
-    padding: 0; 
+    padding: 0;
     box-sizing: border-box;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+
 }
 
 body{
     min-height: 100vh;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    /* overflow: hidden; */
 }
 
-nav{
-    background-color: rgb(202, 4, 4);
-    box-shadow: 3px 3px 5px black;
-    
-
-}
-header{
-    width: auto;
-    position: sticky;
-    z-index: 1000;
-    top: 0;
-    
-}
-
-h1{
-    margin: 5px
-}
-
-nav ul{
-    width: 100%;
-    list-style: none;
+.navbar {
+    background: rgb(202, 4, 4);
     display: flex;
-    justify-content: flex-end;
+    height: 80px;
+    justify-content: center;
     align-items: center;
+    font-size: 1.2rem;
+    position: sticky;
+    top: 0;
+    z-index: 999;
+    font-weight: 500;
+
 }
 
-nav li{
-   height: 70px;
-   
+.navbar_container{
+    width: 100%;
+    max-width: 1300px;
+    display: flex;
+    justify-content: space-between;
+    height: 135px;
+    z-index: 1;
+    margin: 0 auto;
+    padding: 27px 20px;
+
+}
+
+.name{
+    color: whitesmoke;
+    padding: 30px
+}
+
+.navbar_container:first-child{
+    margin-right: auto;
 }
 
 .logo{
@@ -48,16 +54,17 @@ nav li{
     color: white;
     background-color: rgb(13, 13, 66);
     width: 130px;
-    height: 70px;
+    height: auto;
     color: aliceblue;
     display: flex;
     justify-content: center;
     align-items: center;
     position: relative;
-    padding-right: 15px
+    padding-right: 15px;
+   
+    
       
 }
-
 
 #navbar_logo{
     color: aliceblue;
@@ -69,13 +76,16 @@ nav li{
     font-display: swap;
     display: flex;
     justify-content: center;
-    align-items: center;  
-}
+    align-items: center;
+    
 
+     
+   
+}
 
 .design{
     position: absolute;
-    left: 55px;
+    left: 60px;
     font-weight: lighter;
     color: whitesmoke
     
@@ -85,103 +95,157 @@ nav li{
 .logo .para{
     font-size: 0.9rem;
     position: absolute;
-    right: 27px;
+    right: 22px;
     font-weight: bold
     
 
 }
 
+.navbar_menu{
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+   list-style: none;
+   text-align: center;
 
+}
 
-nav a{
-    height : 100%;
-    padding: 0 30px;
-    text-decoration: none;
+.navbar_items{
+    height: 80px
+    
+}
+
+.navbar_links{
+    color: white;
     display: flex;
     align-items: center;
-    color:white;
-    font-size: 1.3rem;
-    font-weight: 500;
+    justify-self: center;
+    text-decoration: none;
+    padding: 0 20px;
+    height: 100%
+
 }
 
-nav a:hover{
-    background-color: grey;
+.navbar_links:hover{
+    color:rgb(95, 95, 238);
+    transition: all 0.3s ease;
 }
 
-nav li:first-child{
-    margin-right: auto;
-}
+@media screen and (max-width: 960px) {
+    .navbar_container{
+        display: flex;
+        justify-content: space-between;
+        height: 80px;
+        z-index: 1;
+        width: 100%;
+        max-width: 1300px;
+        padding: 0;
+        
 
-.sidebar{
-    position: fixed;
-    top: 0;
-    right: 0;
-    height: 100vh;
-    width: 250px;
-    z-index: 999;
-    background-color: rgba(255, 255, 255, 0.315);
-    backdrop-filter: blur(10px);
-    display: none;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: flex-start;
-}
-
-#closebtn{
-    margin-left: auto ;
-}
-
-#menubtn{
-    display:none
-}
-
-.sidebar li{
-   width: 100% 
-}
-
-.sidebar a{
-    width: 100%
-}
-
-
-@media (max-width: 800px){
-
-    .main{
-        display: none;
     }
 
-    .container{
+
+    /* this styles here handles the invisibility of the navbar menu when the screensize goes into smaller screen  */
+    .navbar_menu{
+        
         display: grid;
-        grid-template-columns: repeat(2, 1fr);
-    
+        grid-template-columns: 1fr;
+        margin: 0;
+        width: 100%;
+        position: absolute;
+        top: -1000px;
+        opacity: 0;
+        transition: all 0.5s ease;
+        height: 50vh;
+        z-index: -1;
+        background-color: black;
+        
+
     }
 
-    #menubtn{
-        display: block
+        /* the active classlist that was created by javascript is being styled here whenever is being clicked to appear*/
+    .navbar_menu.active{
+        background-color: rgb(17, 15, 15);
+        top: 100%;
+        opacity: 1;
+        transition: all 0.5s ease;
+        z-index: 99;
+        height: 50vh;
+        font-size: 1.6rem;
+        transform: translate(-0%, -0%);
+        background: rgba(255, 255, 255, 0.3); /* Semi-transparent background */
+        backdrop-filter: blur(10px); /* Apply blur effect */
+        border-radius: 10px; /* Optional: rounded corners */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        
+
+    }
+
+
+    .navbar_menu a{
+        color: black;
     }
 
     .logo{
         margin-left: 15px
     }
-    
-}
-    
 
-@media (max-width: 540px){
+    /* #navbar_logo{
+        margin: 25px 0 0 20px;
+    } */
 
-    .sidebar{
-        height: 100vh;
+    .navbar_toggle .bar{
+        width: 25px;
+        height: 3px;
+        margin : 5px auto;
+        transition: all 0.3s ease-in-out;
+        background-color: white;
+
+    }
+
+    .navbar_items{
         width: 100%;
+        margin: -15px 0;
+        
+         
     }
 
-    .container{
-        display: grid;
-        grid-template-columns: 1fr;
+    .navbar_links{
+        text-align: center;
+        padding: 2rem;
+        display: table;
+        width: 100%;
+        padding: 10px 0;
+        
+        
     }
 
+    #mobile_menu{
+        position: absolute;
+        top: 20%;
+        right: 5%;
+        transform: translate(5%, 20%);
 
+    }
 
+    .navbar_toggle .bar{
+        display: block;
+        cursor: pointer
+    }
+
+   #mobile_menu.is-active .bar:nth-child(2){
+    opacity: 0;
+   }
+
+   #mobile_menu.is-active .bar:nth-child(1){
+    transform: translatey(8px) rotate(45deg);
+   }
+
+   #mobile_menu.is-active .bar:nth-child(3){
+    transform: translatey(-8px) rotate(-45deg);
+   }
 }
+
 
 /* main section */
 

@@ -147,7 +147,6 @@ body{
 
     /* this styles here handles the invisibility of the navbar menu when the screensize goes into smaller screen  */
     .navbar_menu{
-        
         display: grid;
         grid-template-columns: 1fr;
         margin: 0;
@@ -159,6 +158,8 @@ body{
         height: 50vh;
         z-index: -1;
         background-color: black;
+        
+
         
 
     }
@@ -179,7 +180,14 @@ body{
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         
 
+        
+
     }
+
+    .navbar_menu a{
+        color: black;
+    }
+
 
     .logo{
         margin-left: 15px
